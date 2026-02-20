@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "JetBrains Mono", "Fira Code", monospace;
+
+  /* Braun Palette */
+  --color-braun-50:     #fafafa;
+  --color-braun-100:    #f4f4f5;
+  --color-braun-200:    #e4e4e7;
+  --color-braun-300:    #d4d4d8;
+  --color-braun-400:    #a1a1aa;
+  --color-braun-500:    #71717a;
+  --color-braun-600:    #52525b;
+  --color-braun-800:    #27272a;
+  --color-braun-900:    #09090b;
+  --color-braun-orange: #ea580c;
+
+  /* Semantic */
+  --color-data-positive: #059669;
+  --color-data-warning:  #d97706;
+  --color-data-negative: #e11d48;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fafafa;
+  color: #09090b;
+}
+
+::selection {
+  background-color: #09090b;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #09090b;
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #e4e4e7; }
+::-webkit-scrollbar-thumb:hover  { background: #a1a1aa; }
+::-webkit-scrollbar-thumb:active { background: #71717a; }
+
+/* ── Prose (docs / blog content) ──────────────────────── */
+.prose h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  color: #09090b;
+  border-bottom: 1px solid #e4e4e7;
+  padding-bottom: 0.5rem;
+}
+
+.prose h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: #27272a;
+}
+
+.prose p {
+  line-height: 1.75;
+  color: #52525b;
+  margin-bottom: 1rem;
+}
+
+.prose ul {
+  margin: 0.75rem 0 1rem 1.25rem;
+  list-style: disc;
+}
+
+.prose ul li {
+  line-height: 1.75;
+  color: #52525b;
+  margin-bottom: 0.25rem;
+}
+
+.prose pre {
+  background: #09090b;
+  color: #f4f4f5;
+  border-radius: 0;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  margin: 1.25rem 0;
+}
+
+.prose code {
+  font-family: var(--font-mono), monospace;
+}
+
+.prose .note {
+  border-left: 3px solid #09090b;
+  background: #f4f4f5;
+  padding: 0.75rem 1rem;
+  margin: 1.25rem 0;
+  font-size: 0.875rem;
+  color: #52525b;
+}
