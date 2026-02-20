@@ -19,7 +19,7 @@ export function SectionLabel({ index, label, className }: SectionLabelProps) {
           <span className="h-px w-6 bg-braun-200 inline-block" />
         </>
       )}
-      <span className="text-[10px] font-mono uppercase tracking-widest text-braun-400">
+      <span className="text-[10px] font-mono uppercase tracking-widest text-braun-500">
         {label}
       </span>
     </div>
