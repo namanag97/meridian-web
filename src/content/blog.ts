@@ -63,7 +63,7 @@ export const posts: BlogPost[] = [
     excerpt:
       "Data-dense analytics interfaces tend toward visual noise. We took the opposite direction — here's why Bauhaus minimalism makes complex data more legible, not less.",
     date: '2026-01-28',
-    author: { name: 'Naman Agarwal', role: 'Founder & CEO' },
+    author: { name: 'Alex Chen', role: 'Head of Design' },
     readTime: 8,
     featured: false,
     content: [
