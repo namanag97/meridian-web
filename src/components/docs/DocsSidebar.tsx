@@ -1,7 +1,9 @@
 'use client'
 
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Search, X } from 'lucide-react'
 import { navigation } from '@/content/docs'
 import { cn } from '@/lib/utils'
 import { siteConfig } from '@/config/site'
