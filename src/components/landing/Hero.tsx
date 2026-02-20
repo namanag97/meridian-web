@@ -144,32 +144,32 @@ export default function Hero() {
           {/* Left — typography */}
           <div>
             <FadeIn delay={0}>
-              <SectionLabel index="01" label="Process Intelligence Platform" className="mb-10" />
+              <SectionLabel index="01" label={siteConfig.hero.sectionLabel} className="mb-10" />
             </FadeIn>
 
             <FadeIn delay={100}>
               <h1 className="text-[clamp(3rem,7vw,6rem)] font-light tracking-tight leading-[0.92] text-braun-900 mb-8">
-                Process<br />
-                intelligence,<br />
-                <span className="text-braun-orange">finally.</span>
+                {siteConfig.hero.title.map((line, i) => (
+                  <span key={i}>{line}{i < siteConfig.hero.title.length - 1 && <br />}</span>
+                ))}
+                <br />
+                <span className="text-braun-orange">{siteConfig.hero.titleAccent}</span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
               <p className="text-[1.0625rem] text-braun-600 font-light leading-[1.7] max-w-[420px] mb-10">
-                Understand how your business processes actually execute — not how you
-                think they do. Real-time conformance, automated root-cause analysis,
-                and no-code automation. Connected.
+                {siteConfig.hero.subtitle}
               </p>
             </FadeIn>
 
             <FadeIn delay={300}>
               <div className="flex flex-wrap gap-3 mb-14">
-                <ButtonLink href="/docs/quick-start" size="lg">
-                  Get started free <ArrowRight size={13} />
+                <ButtonLink href={siteConfig.hero.primaryCta.href} size="lg">
+                  {siteConfig.hero.primaryCta.label} <ArrowRight size={13} />
                 </ButtonLink>
-                <ButtonLink href="/docs/introduction" variant="secondary" size="lg">
-                  Read the docs
+                <ButtonLink href={siteConfig.hero.secondaryCta.href} variant="secondary" size="lg">
+                  {siteConfig.hero.secondaryCta.label}
                 </ButtonLink>
               </div>
             </FadeIn>
@@ -177,14 +177,17 @@ export default function Hero() {
             {/* Trust signals */}
             <FadeIn delay={400}>
               <div className="flex flex-wrap gap-6 pt-6 border-t border-braun-200">
-                {trust.map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-2">
-                    <Icon size={11} className="text-braun-500" />
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-braun-500">
-                      {label}
-                    </span>
-                  </div>
-                ))}
+                {siteConfig.hero.trustSignals.map((signal, i) => {
+                  const Icon = trustIcons[i] ?? ShieldCheck
+                  return (
+                    <div key={signal.label} className="flex items-center gap-2">
+                      <Icon size={11} className="text-braun-500" />
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-braun-500">
+                        {signal.label}
+                      </span>
+                    </div>
+                  )
+                })}
               </div>
             </FadeIn>
           </div>
