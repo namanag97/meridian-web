@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Changelog' }
+export const metadata: Metadata = {
+  title: 'Changelog',
+  description: 'New features, improvements, and fixes shipped to Meridian. Track every release.',
+}
 
 type Change = { label: string; items: string[]; color: string }
 type Release = {
