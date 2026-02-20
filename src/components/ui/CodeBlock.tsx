@@ -23,9 +23,9 @@ export function CodeBlock({ code, lang = 'code', className }: CodeBlockProps) {
         </span>
         {/* Decorative dots — matches DS window chrome */}
         <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-braun-700" />
-          <span className="w-1.5 h-1.5 rounded-full bg-braun-700" />
-          <span className="w-1.5 h-1.5 rounded-full bg-braun-700" />
+          <span className="w-1.5 h-1.5 rounded-sm bg-braun-700" />
+          <span className="w-1.5 h-1.5 rounded-sm bg-braun-700" />
+          <span className="w-1.5 h-1.5 rounded-sm bg-braun-700" />
         </div>
       </div>
 
