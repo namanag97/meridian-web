@@ -68,7 +68,7 @@ export default function Pricing() {
             return (
               <FadeIn key={tier.name} delay={i * 120} direction="up">
                 <div
-                  className={`flex flex-col p-8 h-full ${tier.featured ? 'bg-braun-900' : 'bg-white'}`}
+                  className={`flex flex-col p-8 h-full hover-lift ${tier.featured ? 'bg-braun-900' : 'bg-white'}`}
                 >
                   {tier.featured && (
                     <div className="text-[9px] font-mono uppercase tracking-widest text-braun-orange border border-braun-orange/40 px-2 py-0.5 self-start mb-5">
