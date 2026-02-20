@@ -10,7 +10,7 @@ export default function CTA() {
       <div className="max-w-7xl mx-auto px-6 py-32">
         {/* Section label */}
         <FadeIn>
-          <div className="text-[10px] font-mono uppercase tracking-widest text-braun-600 mb-10">
+          <div className="text-[10px] font-mono uppercase tracking-widest text-braun-500 mb-10">
             06 — Get started
           </div>
         </FadeIn>
