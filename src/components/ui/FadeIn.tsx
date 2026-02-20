@@ -12,6 +12,14 @@ interface FadeInProps {
   once?: boolean
 }
 
+const TRANSLATE: Record<NonNullable<FadeInProps['direction']>, string> = {
+  up: 'translate3d(0, 24px, 0)',
+  down: 'translate3d(0, -24px, 0)',
+  left: 'translate3d(24px, 0, 0)',
+  right: 'translate3d(-24px, 0, 0)',
+  none: 'translate3d(0, 0, 0)',
+}
+
 export function FadeIn({
   children,
   className,
@@ -36,20 +44,12 @@ export function FadeIn({
           setVisible(false)
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     )
 
     observer.observe(el)
     return () => observer.disconnect()
   }, [once])
-
-  const translate = {
-    up: 'translate3d(0, 24px, 0)',
-    down: 'translate3d(0, -24px, 0)',
-    left: 'translate3d(24px, 0, 0)',
-    right: 'translate3d(-24px, 0, 0)',
-    none: 'translate3d(0, 0, 0)',
-  }
 
   return (
     <div
@@ -57,9 +57,8 @@ export function FadeIn({
       className={cn(className)}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translate3d(0, 0, 0)' : translate[direction],
+        transform: visible ? 'translate3d(0, 0, 0)' : TRANSLATE[direction],
         transition: `opacity ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94) ${delay}ms, transform ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94) ${delay}ms`,
-        willChange: 'opacity, transform',
       }}
     >
       {children}
