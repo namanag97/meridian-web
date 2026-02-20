@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { siteConfig } from '@/config/site'
@@ -13,15 +13,27 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { theme, toggle } = useTheme()
+  const ticking = useRef(false)
+
+  const onScroll = useCallback(() => {
+    if (ticking.current) return
+    ticking.current = true
+    requestAnimationFrame(() => {
+      setScrolled(window.scrollY > 20)
+      ticking.current = false
+    })
+  }, [])
 
   useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 20)
-    }
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [onScroll])
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
 
   function isActive(href: string) {
     if (href.startsWith('/#')) return false
@@ -31,7 +43,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 inset-x-0 z-50 transition-all duration-300',
+        'fixed top-0 inset-x-0 z-50 transition-[background-color,border-color] duration-300',
         scrolled
           ? 'bg-white border-b border-braun-200'
           : 'bg-transparent border-b border-transparent'
@@ -70,7 +82,7 @@ export default function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle theme"
-            className="p-2 border border-braun-200 hover:border-braun-900 transition-colors text-braun-500 hover:text-braun-900"
+            className="p-2 border border-braun-200 hover:border-braun-900 transition-colors duration-200 text-braun-500 hover:text-braun-900"
           >
             {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
           </button>
@@ -101,7 +113,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          'md:hidden border-t border-braun-200 bg-white overflow-hidden transition-all duration-300',
+          'md:hidden border-t border-braun-200 bg-white overflow-hidden transition-[max-height,opacity] duration-300',
           open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         )}
       >
@@ -110,7 +122,6 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              onClick={() => setOpen(false)}
               className="text-[10px] font-mono uppercase tracking-widest text-braun-500 hover:text-braun-900 transition-colors py-1"
             >
               {l.label}
@@ -127,13 +138,11 @@ export default function Navbar() {
             <Link
               href={siteConfig.ctaLinks.signIn.href}
               className="text-[10px] font-mono uppercase tracking-widest text-braun-400"
-              onClick={() => setOpen(false)}
             >
               {siteConfig.ctaLinks.signIn.label}
             </Link>
             <Link
               href={siteConfig.ctaLinks.getStarted.href}
-              onClick={() => setOpen(false)}
               className="px-4 py-2.5 text-[10px] font-mono font-bold uppercase tracking-widest bg-braun-900 text-white border border-braun-900 text-center"
             >
               {siteConfig.ctaLinks.getStarted.label}
