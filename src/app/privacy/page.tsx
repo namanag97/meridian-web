@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 
-export const metadata: Metadata = { title: 'Privacy Policy' }
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'How Meridian collects, uses, and protects your data. GDPR and CCPA compliant.',
+}
 
 export default function PrivacyPage() {
   return (
