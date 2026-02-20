@@ -117,6 +117,13 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-3 border-t border-braun-100 flex flex-col gap-3">
+            <button
+              onClick={toggle}
+              aria-label="Toggle theme"
+              className="p-2 border border-braun-200 hover:border-braun-900 transition-colors text-braun-500 hover:text-braun-900 self-start"
+            >
+              {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+            </button>
             <Link
               href={siteConfig.ctaLinks.signIn.href}
               className="text-[10px] font-mono uppercase tracking-widest text-braun-400"
