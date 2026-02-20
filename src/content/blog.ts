@@ -1,9 +1,4 @@
-export interface ContentBlock {
-  type: 'p' | 'h2' | 'h3' | 'code' | 'list' | 'note'
-  text?: string
-  items?: string[]
-  lang?: string
-}
+export type { ContentBlock } from './types'
 
 export interface BlogPost {
   slug: string
