@@ -54,6 +54,29 @@ export default function DocsSidebar() {
         <div className="text-[10px] font-mono uppercase tracking-widest text-braun-500">
           Documentation
         </div>
+        <div className="mt-3 relative">
+          <Search size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-braun-400" />
+          <input
+            ref={searchRef}
+            type="text"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            placeholder="Search docs..."
+            className="w-full bg-braun-50 border border-braun-200 pl-8 pr-8 py-2 text-xs text-braun-900 placeholder:text-braun-400 focus:border-braun-900 focus:ring-0 focus:outline-none"
+          />
+          {query ? (
+            <button
+              onClick={() => setQuery('')}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-braun-400 hover:text-braun-900"
+            >
+              <X size={12} />
+            </button>
+          ) : (
+            <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-[8px] font-mono text-braun-400 border border-braun-200 px-1 py-0.5">
+              ⌘K
+            </kbd>
+          )}
+        </div>
       </div>
 
       {/* Navigation */}
