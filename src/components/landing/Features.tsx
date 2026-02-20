@@ -1,5 +1,8 @@
+'use client'
+
 import { Activity, CheckCircle, GitBranch, LayoutDashboard, Users, Lock } from 'lucide-react'
 import { SectionLabel } from '@/components/ui'
+import { FadeIn } from '@/components/ui/FadeIn'
 
 const features = [
   {
@@ -39,32 +42,36 @@ export default function Features() {
     <section id="features" className="border-b border-braun-200 bg-white">
       <div className="max-w-7xl mx-auto px-6 py-24">
 
-        {/* Section header — shared layout pattern */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16 pb-10 border-b border-braun-200">
-          <div>
-            <SectionLabel index="02" label="Capabilities" className="mb-5" />
-            <h2 className="text-3xl lg:text-4xl font-light tracking-tight text-braun-900 leading-tight">
-              Everything you need<br />to operate with clarity.
-            </h2>
-          </div>
-          <div className="flex items-end">
-            <p className="text-sm text-braun-500 leading-relaxed max-w-sm lg:ml-auto">
-              From raw event data to automated exception handling — without stitching
-              together six different tools or waiting on a consulting engagement.
-            </p>
-          </div>
-        </div>
-
-        {/* Feature grid — gap-px on braun-100 = DS grid-line pattern from Structure section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-braun-100">
-          {features.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="bg-white p-8 group cursor-default">
-              <div className="w-9 h-9 border border-braun-200 flex items-center justify-center mb-6 group-hover:border-braun-900 group-hover:bg-braun-900 transition-colors duration-300">
-                <Icon size={15} className="text-braun-500 group-hover:text-white transition-colors duration-300" />
-              </div>
-              <h3 className="text-sm font-semibold text-braun-900 mb-2 tracking-tight">{title}</h3>
-              <p className="text-xs text-braun-500 leading-relaxed">{description}</p>
+        {/* Section header */}
+        <FadeIn>
+          <div className="grid lg:grid-cols-2 gap-8 mb-16 pb-10 border-b border-braun-200">
+            <div>
+              <SectionLabel index="02" label="Capabilities" className="mb-5" />
+              <h2 className="text-3xl lg:text-4xl font-light tracking-tight text-braun-900 leading-tight">
+                Everything you need<br />to operate with clarity.
+              </h2>
             </div>
+            <div className="flex items-end">
+              <p className="text-sm text-braun-500 leading-relaxed max-w-sm lg:ml-auto">
+                From raw event data to automated exception handling — without stitching
+                together six different tools or waiting on a consulting engagement.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+
+        {/* Feature grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-braun-100">
+          {features.map(({ icon: Icon, title, description }, i) => (
+            <FadeIn key={title} delay={i * 80} direction="up">
+              <div className="bg-white p-8 group cursor-default h-full">
+                <div className="w-9 h-9 border border-braun-200 flex items-center justify-center mb-6 group-hover:border-braun-900 group-hover:bg-braun-900 transition-colors duration-300">
+                  <Icon size={15} className="text-braun-500 group-hover:text-white transition-colors duration-300" />
+                </div>
+                <h3 className="text-sm font-semibold text-braun-900 mb-2 tracking-tight">{title}</h3>
+                <p className="text-xs text-braun-500 leading-relaxed">{description}</p>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>
