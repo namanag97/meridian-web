@@ -147,7 +147,7 @@ export const posts: BlogPost[] = [
     excerpt:
       "A deep dive into how Meridian's conformance engine works, and how to design workflows that remain aligned to your reference model under real-world conditions.",
     date: '2025-12-22',
-    author: { name: 'Naman Agarwal', role: 'Founder & CEO' },
+    author: { name: 'Daniel Kim', role: 'Engineering Lead' },
     readTime: 10,
     featured: false,
     content: [
