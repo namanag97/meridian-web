@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 
-export const metadata: Metadata = { title: 'Terms of Service' }
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description: 'Terms governing your use of the Meridian process intelligence platform.',
+}
 
 export default function TermsPage() {
   return (
