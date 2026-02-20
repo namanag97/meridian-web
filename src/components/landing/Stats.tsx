@@ -25,7 +25,7 @@ export default function Stats() {
                 <div className="text-[10px] font-mono uppercase tracking-widest text-braun-400 mb-1">
                   {s.label}
                 </div>
-                <div className="text-[10px] font-mono text-braun-600">{s.sub}</div>
+                <div className="text-[10px] font-mono text-braun-500">{s.sub}</div>
               </div>
             </FadeIn>
           ))}
