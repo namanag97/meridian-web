@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
           >
             <ArrowLeft size={10} /> All posts
           </Link>
-          <span className="text-[9px] font-mono text-braun-200 uppercase tracking-widest">
+          <span className="text-[9px] font-mono text-braun-400 uppercase tracking-widest">
             Meridian Journal
           </span>
         </div>
