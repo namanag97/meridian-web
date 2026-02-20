@@ -3,10 +3,10 @@ import { ArrowRight } from 'lucide-react'
 import { type BlogPost, formatDate } from '@/content/blog'
 
 const categoryStyle: Record<string, string> = {
-  Product:      'text-braun-900 border-braun-900 bg-braun-50',
-  Design:       'text-data-violet border-data-violet bg-violet-50',
-  'Case Study': 'text-data-positive border-data-positive bg-emerald-50',
-  Engineering:  'text-braun-orange border-braun-orange bg-orange-50',
+  Product:      'text-braun-900 border-braun-200 bg-braun-100',
+  Design:       'text-data-violet border-data-violet/30 bg-data-violet/10',
+  'Case Study': 'text-data-positive border-data-positive/30 bg-data-positive/10',
+  Engineering:  'text-braun-orange border-braun-orange/30 bg-braun-orange/10',
 }
 
 interface Props {
