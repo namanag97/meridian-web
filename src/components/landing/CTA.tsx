@@ -46,7 +46,7 @@ export default function CTA() {
               >
                 Read the docs
               </Link>
-              <p className="text-[10px] font-mono text-braun-600 uppercase tracking-widest text-center mt-1">
+              <p className="text-[10px] font-mono text-braun-500 uppercase tracking-widest text-center mt-1">
                 14-day trial on Pro · Cancel anytime
               </p>
             </div>
