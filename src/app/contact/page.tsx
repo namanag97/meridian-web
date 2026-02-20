@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
 
-export const metadata: Metadata = { title: 'Contact' }
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'Get in touch with the Meridian team. Questions, feedback, sales inquiries, or partnership opportunities.',
+}
 
 export default function ContactPage() {
   return (
