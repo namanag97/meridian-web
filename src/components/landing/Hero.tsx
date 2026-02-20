@@ -3,19 +3,9 @@
 import { ArrowRight, ShieldCheck, Zap, Globe } from 'lucide-react'
 import { ButtonLink, SectionLabel } from '@/components/ui'
 import { FadeIn } from '@/components/ui/FadeIn'
+import { siteConfig } from '@/config/site'
 
-const trust = [
-  { icon: ShieldCheck, label: 'SOC 2 Type II' },
-  { icon: Zap,         label: '<50ms p99 latency' },
-  { icon: Globe,       label: '99.9% uptime SLA' },
-]
-
-const statsStrip = [
-  { value: '500+',  label: 'Operations teams' },
-  { value: '40M+',  label: 'Events per day' },
-  { value: '94.7%', label: 'Avg conformance' },
-  { value: '<50ms', label: 'Ingest latency' },
-]
+const trustIcons = [ShieldCheck, Zap, Globe]
 
 const deviations = [
   { id: 'INV-2847', activity: 'Approval skipped',  type: 'error',   time: '2m ago' },
