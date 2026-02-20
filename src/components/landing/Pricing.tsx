@@ -44,7 +44,7 @@ export default function Pricing() {
                 {/* Price */}
                 <div className="flex items-baseline gap-1 mb-1">
                   <span className={`text-4xl font-mono font-light tabular-nums ${tier.featured ? 'text-white' : 'text-braun-900'}`}>
-                    {tier.price}
+                    {tier.monthlyPrice}
                   </span>
                   {tier.period && (
                     <span className={`text-xs font-mono ${tier.featured ? 'text-braun-500' : 'text-braun-400'}`}>
