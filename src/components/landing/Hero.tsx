@@ -211,9 +211,9 @@ export default function Hero() {
 
       {/* Stats strip */}
       <div className="relative border-t border-braun-200 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 divide-x divide-braun-200">
-          {statsStrip.map((s, i) => (
-            <div key={s.label} className={`py-5 ${i === 0 ? 'pr-6' : 'px-6'}`}>
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-px bg-braun-200">
+          {statsStrip.map((s) => (
+            <div key={s.label} className="py-5 px-6 bg-white">
               <div className="text-2xl lg:text-3xl font-mono font-light text-braun-900 tabular-nums">
                 {s.value}
               </div>
