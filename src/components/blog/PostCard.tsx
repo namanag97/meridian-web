@@ -81,7 +81,7 @@ export default function PostCard({ post, featured = false }: Props) {
         <span className="text-[9px] font-mono text-braun-400 uppercase tracking-widest">
           {formatDate(post.date)}
         </span>
-        <span className="text-[9px] font-mono text-braun-300 uppercase tracking-widest">
+        <span className="text-[9px] font-mono text-braun-500 uppercase tracking-widest">
           {post.readTime} min
         </span>
       </div>
