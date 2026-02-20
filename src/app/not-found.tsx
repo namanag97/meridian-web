@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="pt-14 min-h-screen bg-braun-50 flex items-center justify-center">
       <div className="text-center px-6">
-        <div className="text-[10px] font-mono uppercase tracking-widest text-braun-400 mb-6">
+        <div className="text-[10px] font-mono uppercase tracking-widest text-braun-500 mb-6">
           Error 404
         </div>
         <h1 className="text-6xl lg:text-8xl font-mono font-light text-braun-900 mb-4">
