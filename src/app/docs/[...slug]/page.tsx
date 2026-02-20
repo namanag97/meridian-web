@@ -68,14 +68,14 @@ export default async function DocPage({ params }: Props) {
       >
         <Link
           href="/docs/introduction"
-          className="text-[9px] font-mono uppercase tracking-widest text-braun-300 hover:text-braun-900 transition-colors"
+          className="text-[9px] font-mono uppercase tracking-widest text-braun-500 hover:text-braun-900 transition-colors"
         >
           Docs
         </Link>
         <ChevronRight size={9} className="text-braun-200" />
         {section && (
           <>
-            <span className="text-[9px] font-mono uppercase tracking-widest text-braun-300">
+            <span className="text-[9px] font-mono uppercase tracking-widest text-braun-500">
               {section.title}
             </span>
             <ChevronRight size={9} className="text-braun-200" />
