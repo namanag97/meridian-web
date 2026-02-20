@@ -45,7 +45,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-braun-200">
           {items.map((t, i) => (
             <FadeIn key={t.name} delay={i * 120} direction="up">
-              <div className="bg-white p-8 flex flex-col h-full">
+              <div className="bg-white p-8 flex flex-col h-full hover-lift">
                 <blockquote className="text-sm text-braun-600 leading-relaxed flex-1 mb-8">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
