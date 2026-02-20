@@ -159,3 +159,90 @@ body {
   border-left-color: #e11d48;
   background: #fff1f2;
 }
+
+/* ── Dark mode ──────────────────────────────────────────── */
+[data-theme="dark"] {
+  --color-braun-50: #09090b;
+  --color-braun-100: #18181b;
+  --color-braun-200: #27272a;
+  --color-braun-300: #3f3f46;
+  --color-braun-400: #71717a;
+  --color-braun-500: #a1a1aa;
+  --color-braun-600: #d4d4d8;
+  --color-braun-700: #e4e4e7;
+  --color-braun-800: #f4f4f5;
+  --color-braun-900: #fafafa;
+  /* orange accent stays the same */
+  --color-braun-orange: #ea580c;
+
+  /* Semantic data tokens stay the same — they're already high contrast */
+}
+
+[data-theme="dark"] body {
+  background-color: #09090b;
+  color: #fafafa;
+}
+
+[data-theme="dark"] ::selection {
+  background-color: #fafafa;
+  color: #09090b;
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: #fafafa;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:active {
+  background: #71717a;
+}
+
+/* Cards and surfaces that use bg-white should invert */
+[data-theme="dark"] .bg-white {
+  background-color: #18181b;
+}
+
+/* Prose dark overrides */
+[data-theme="dark"] .prose {
+  color: #d4d4d8;
+}
+[data-theme="dark"] .prose h2 {
+  color: #fafafa;
+  border-bottom-color: #27272a;
+}
+[data-theme="dark"] .prose h3 {
+  color: #f4f4f5;
+}
+[data-theme="dark"] .prose p {
+  color: #d4d4d8;
+}
+[data-theme="dark"] .prose ul li {
+  color: #d4d4d8;
+}
+[data-theme="dark"] .prose ul li::before {
+  color: #71717a;
+}
+[data-theme="dark"] .prose pre {
+  background: #18181b;
+  border-color: #3f3f46;
+  color: #e4e4e7;
+}
+[data-theme="dark"] .prose :not(pre) > code {
+  background: #18181b;
+  border-color: #27272a;
+  color: #f4f4f5;
+}
+[data-theme="dark"] .prose .note {
+  background: #18181b;
+  border-left-color: #fafafa;
+  color: #d4d4d8;
+}
+[data-theme="dark"] .prose .note.warning {
+  border-left-color: #e11d48;
+  background: #1c0a10;
+}
