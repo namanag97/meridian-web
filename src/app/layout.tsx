@@ -25,10 +25,23 @@ export const metadata: Metadata = {
   },
   description:
     'Understand how your business processes actually run. Real-time conformance checking, automated root cause analysis, and no-code automation — without the consulting engagement.',
+  metadataBase: new URL('https://namanag97.github.io/meridian-web'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
     siteName: 'Meridian',
+    title: 'Meridian — Process Intelligence for Modern Teams',
+    description: 'Real-time conformance checking, automated root cause analysis, and no-code automation.',
+    url: 'https://namanag97.github.io/meridian-web',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Meridian — Process Intelligence for Modern Teams',
+    description: 'Real-time conformance checking, automated root cause analysis, and no-code automation.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
