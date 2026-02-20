@@ -76,7 +76,7 @@ export default function FAQ() {
                     <div
                       className={cn(
                         'overflow-hidden transition-all duration-300',
-                        openIndex === i ? 'max-h-48 pb-5' : 'max-h-0'
+                        openIndex === i ? 'max-h-[500px] pb-5' : 'max-h-0'
                       )}
                     >
                       <p className="text-xs text-braun-500 leading-relaxed pr-8">
