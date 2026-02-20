@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/ui/ThemeProvider'
+import { siteConfig } from '@/config/site'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -21,24 +22,23 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Meridian — Process Intelligence for Modern Teams',
-    template: '%s · Meridian',
+    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    template: `%s · ${siteConfig.name}`,
   },
-  description:
-    'Understand how your business processes actually run. Real-time conformance checking, automated root cause analysis, and no-code automation — without the consulting engagement.',
-  metadataBase: new URL('https://namanag97.github.io/meridian-web'),
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Meridian',
-    title: 'Meridian — Process Intelligence for Modern Teams',
-    description: 'Real-time conformance checking, automated root cause analysis, and no-code automation.',
-    url: 'https://namanag97.github.io/meridian-web',
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Meridian — Process Intelligence for Modern Teams',
-    description: 'Real-time conformance checking, automated root cause analysis, and no-code automation.',
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
   },
   robots: {
     index: true,
