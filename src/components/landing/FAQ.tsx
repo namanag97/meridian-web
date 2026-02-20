@@ -61,6 +61,9 @@ export default function FAQ() {
                     <button
                       onClick={() => setOpenIndex(openIndex === i ? null : i)}
                       className="w-full flex items-start justify-between gap-4 py-5 text-left group"
+                      aria-expanded={openIndex === i}
+                      aria-controls={`faq-answer-${i}`}
+                      id={`faq-question-${i}`}
                     >
                       <span className="text-sm font-medium text-braun-900 group-hover:text-braun-orange transition-colors duration-200">
                         {faq.q}
