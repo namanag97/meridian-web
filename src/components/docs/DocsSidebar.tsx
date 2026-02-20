@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { navigation } from '@/content/docs'
 import { cn } from '@/lib/utils'
+import { siteConfig } from '@/config/site'
 
 /**
  * DocsSidebar — Swiss grid document navigation.
