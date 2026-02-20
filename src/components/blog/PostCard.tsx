@@ -66,7 +66,7 @@ export default function PostCard({ post, featured = false }: Props) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group flex flex-col bg-white border border-braun-200 hover:border-braun-900 transition-colors duration-300"
+      className="group flex flex-col bg-white border border-braun-200 hover:border-braun-900 transition-colors duration-300 hover-lift"
     >
       <div className="p-6 flex flex-col flex-1">
         <div className={`inline-block text-[9px] font-mono uppercase tracking-widest border px-2 py-0.5 mb-4 self-start ${catCls}`}>
