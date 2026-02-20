@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/ui/ThemeProvider'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { siteConfig } from '@/config/site'
 
 const inter = Inter({
