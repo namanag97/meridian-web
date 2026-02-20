@@ -12,78 +12,76 @@ const features = [
     icon: Activity,
     title: 'Real-time monitoring',
     description:
-      'Observe every case as it executes. Deviations surface immediately — not in the next batch report.',
-    tag: 'Live',
+      'Every case evaluated as it runs. Deviations surface in milliseconds — not in the next batch report. Intervene while the case is still open.',
   },
   {
     icon: CheckCircle,
     title: 'Conformance checking',
     description:
-      'Measure how closely each case aligns with your reference model. Set thresholds per process, get alerts on breach.',
-    tag: 'Core',
+      'Measure how closely each execution aligns with your reference model. Set thresholds per process; get alerts the moment a case crosses them.',
   },
   {
     icon: GitBranch,
     title: 'Root cause analysis',
     description:
-      'When a case deviates, Meridian identifies the most likely cause automatically using variant analysis and ML attribution.',
-    tag: 'AI',
+      'When a case deviates, the cause is identified automatically — using variant analysis and ML attribution. No manual drill-down required.',
   },
   {
     icon: LayoutDashboard,
     title: 'Custom dashboards',
     description:
-      'Compose views from our chart library: process maps, conformance timelines, variant tables, KPI grids.',
-    tag: 'Analytics',
+      'Compose views from our chart library: process maps, conformance timelines, variant tables, KPI grids. Embed anywhere.',
   },
   {
     icon: Users,
     title: 'Team collaboration',
     description:
-      'Annotate cases, assign investigations, share dashboards. Process intelligence as a team sport.',
-    tag: 'Collab',
+      'Annotate cases, assign investigations, share dashboards. Process intelligence is a team sport — tooling should reflect that.',
   },
   {
     icon: Lock,
     title: 'Enterprise security',
     description:
-      'SOC 2 Type II certified. Single-tenant deployment available. SSO, RBAC, audit logs included on all paid plans.',
-    tag: 'Security',
+      'SOC 2 Type II certified. Single-tenant deployment available. SSO, RBAC, and full audit logs on all paid plans.',
   },
 ]
 
 export default function Features() {
   return (
     <section id="features" className="border-b border-braun-200 bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-24">
+
         {/* Header */}
-        <div className="flex items-start justify-between mb-12 pb-6 border-b border-braun-100">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16 pb-10 border-b border-braun-200">
           <div>
-            <div className="text-[10px] font-mono uppercase tracking-widest text-braun-400 mb-3">
+            <div className="text-[10px] font-mono uppercase tracking-widest text-braun-400 mb-4">
               02 — Capabilities
             </div>
-            <h2 className="text-2xl font-bold text-braun-900 max-w-sm leading-tight">
-              Everything you need to operate with clarity.
+            <h2 className="text-3xl lg:text-4xl font-light tracking-tight text-braun-900 leading-tight">
+              Everything you need<br />to operate with clarity.
             </h2>
           </div>
-          <p className="hidden md:block text-sm text-braun-500 max-w-xs leading-relaxed text-right">
-            From raw event data to automated exception handling — without stitching together six different tools.
-          </p>
+          <div className="flex items-end">
+            <p className="text-sm text-braun-500 leading-relaxed max-w-sm lg:ml-auto">
+              From raw event data to automated exception handling — without stitching
+              together six different tools or waiting on a consulting engagement.
+            </p>
+          </div>
         </div>
 
-        {/* Feature grid */}
+        {/* Feature grid — gap-px on braun-100 creates the grid-line effect from the DS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-braun-100">
-          {features.map(({ icon: Icon, title, description, tag }) => (
-            <div key={title} className="bg-white p-8 group">
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-9 h-9 border border-braun-200 flex items-center justify-center group-hover:border-braun-900 group-hover:bg-braun-900 transition-colors">
-                  <Icon size={15} className="text-braun-600 group-hover:text-white transition-colors" />
-                </div>
-                <span className="text-[9px] font-mono uppercase tracking-widest text-braun-300 border border-braun-100 px-2 py-0.5">
-                  {tag}
-                </span>
+          {features.map(({ icon: Icon, title, description }) => (
+            <div key={title} className="bg-white p-8 group cursor-default">
+              <div className="w-9 h-9 border border-braun-200 flex items-center justify-center mb-6 group-hover:border-braun-900 group-hover:bg-braun-900 transition-colors duration-300">
+                <Icon
+                  size={15}
+                  className="text-braun-500 group-hover:text-white transition-colors duration-300"
+                />
               </div>
-              <h3 className="text-sm font-semibold text-braun-900 mb-2">{title}</h3>
+              <h3 className="text-sm font-semibold text-braun-900 mb-2 tracking-tight">
+                {title}
+              </h3>
               <p className="text-xs text-braun-500 leading-relaxed">{description}</p>
             </div>
           ))}
