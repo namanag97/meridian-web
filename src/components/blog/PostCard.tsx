@@ -21,7 +21,7 @@ export default function PostCard({ post, featured = false }: Props) {
     return (
       <Link
         href={`/blog/${post.slug}`}
-        className="group block bg-white border border-braun-200 hover:border-braun-900 transition-colors duration-300"
+        className="group block bg-white border border-braun-200 hover:border-braun-900 transition-colors duration-300 hover-lift"
       >
         <div className="grid md:grid-cols-[1fr_320px] gap-0 divide-y md:divide-y-0 md:divide-x divide-braun-200">
           {/* Main content */}
