@@ -45,7 +45,7 @@ const tiers = [
     period: '',
     description:
       'For large organizations with compliance requirements, custom deployment, and SLA needs.',
-    cta: { label: 'Talk to sales', href: '/blog' },
+    cta: { label: 'Talk to sales', href: 'mailto:sales@meridian.io' },
     featured: false,
     features: [
       'Everything in Pro',
