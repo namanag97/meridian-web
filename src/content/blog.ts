@@ -106,7 +106,7 @@ export const posts: BlogPost[] = [
     excerpt:
       "TechCorp's operations team was spending 40% of their time on exception handling. Here's how they used Meridian's automation studio to reclaim it.",
     date: '2026-01-15',
-    author: { name: 'Naman Agarwal', role: 'Founder & CEO' },
+    author: { name: 'Priya Sharma', role: 'Customer Success Lead' },
     readTime: 5,
     featured: false,
     content: [
